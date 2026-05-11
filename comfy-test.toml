@@ -1,0 +1,17 @@
+# comfy-test configuration for ComfyUI-SkinTokens_env
+# See https://github.com/PozzettiAndrea/comfy-test (v0.4.x)
+# Name is auto-detected from directory name.
+[test]
+levels = ["install", "registration", "instantiation", "static_capture", "validation", "execution_light"]
+# open3d (nodes/comfy-env.toml) publishes wheels only up to cp312,
+# so pin CI to 3.12 instead of random 3.10-3.13.
+python_version = "3.12"
+comfyui_version = "latest"
+
+[test.workflows]
+cpu = ["test_cpu.json"]
+timeout = 600
+
+[test.platforms]
+# Explicit opt-in allowlist — CPU runners only for now.
+platforms = ["linux-cpu", "macos-cpu", "windows-cpu", "windows-portable-cpu"]

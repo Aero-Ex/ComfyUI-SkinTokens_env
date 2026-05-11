@@ -1,0 +1,19 @@
+[project]
+name = "ComfyUI-SkinTokens_env"
+description = "A ComfyUI plugin based on SkinTokens with comfy-env process isolation"
+version = "0.1.0"
+license = "MIT"
+dynamic = ["dependencies"]
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+
+[project.urls]
+Repository = "https://github.com/Aero-Ex/ComfyUI-SkinTokens_env"
+
+[tool.comfy]
+PublisherId = "aerox"
+DisplayName = "SkinTokens (Isolated)"
+Icon = ""

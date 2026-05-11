@@ -1,0 +1,4 @@
+# No required node packs. (ComfyUI-Env-Manager was previously listed here, but
+# that repository no longer exists / is not public, so its clone 404s and fails
+# both `comfy-env install` and comfy-test's INSTALL level.)
+[node_packs]

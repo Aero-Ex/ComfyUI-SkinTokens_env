@@ -1,0 +1,6 @@
+name: Test Installation
+on: [push, pull_request]
+
+jobs:
+  test:
+    uses: PozzettiAndrea/comfy-test/.github/workflows/test-matrix.yml@v0.4.5

@@ -1,0 +1,49 @@
+# Pin the isolated env interpreter: CI picks a random host Python (3.10-3.13)
+# but open3d publishes wheels only up to cp312. Keep this in sync with what
+# our heaviest native dep supports.
+python = "3.12"
+
+[workspace]
+channels = ["conda-forge", "pozzettiandrea"]
+
+[dependencies]
+bpy = {version = "*", channel = "pozzettiandrea"}
+
+[target.linux-64.dependencies]
+mesalib = "*"        # replaces apt: libgl1-mesa-glx, libgl1
+libglu = "*"         # replaces apt: libglu1-mesa
+libglvnd = "*"       # replaces apt: libopengl0
+xorg-libsm = "*"     # libSM.so.6 required by bpy
+
+[cuda]
+packages = ["flash-attn"]
+
+[pypi-dependencies]
+scipy = "*"
+pillow = ">=9.0.0"
+tqdm = ">=4.60.0"
+trimesh = "*"
+einops = "*"
+psutil = "*"
+comfy-kitchen = "*"
+comfy-aimdo = "*"
+python-box = "*"
+omegaconf = "*"
+lightning = "*"
+addict = "*"
+fast-simplification = "*"
+open3d = "*"
+gradio = "*"
+bottle = "*"
+tornado = "*"
+dill = "*"
+numpy = "*"
+transformers = "*"
+diffusers = "*"
+accelerate = "*"
+huggingface-hub = "*"
+requests = ">=2.25.0"
+
+[env_vars]
+KMP_DUPLICATE_LIB_OK = "TRUE"
+OMP_NUM_THREADS = 1
